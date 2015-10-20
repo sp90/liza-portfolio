@@ -1,17 +1,26 @@
 <section class="case1">
-	<header>
-		<div class="half--horizontal">
-		<h1>Grafisk Design</h1>
+	<article>
+		<div class="case__content-wrap">
+			<div class="case__content-wrap__start-content">
+				<button class="nav--close" ng-click="vm.close(false)"><i class="fa fa-times"></i></button>
+				<div class="case__content__fade">
+					<p>ECCO ønskede at nå en ny og yngre målgruppe med deres nye sneaker „Intrinsic“. Min opgave var derfor at designe en heropage, som henvendte sig til et nyt publikum, men samtidig passede ind i ECCO’s univers</p>
+
+					<p>Konceptet var at fortælle en „day to night“ historie ned gennem siden. Ved scroll roterer sneakeren i venstre side, mens du til højre bliver eksponeret for „instagram“ like posts hvor vores influences ses i forskellige situationer gennem en dag. Hashtagget „#partofmyworld“ bliver pushet gennem kampagnen & lægger op til at modtageren selv poster billleder med sine „Intrinsic“ sneakers.</p>
+				</div>
+			</div>
 		</div>
-		<div class="half--horizontal" style="background-image: url(/assets/rainy.jpg);"></div>
+	</article>
+	<header>
+		<div class="header__image" style="background-image: url(/assets/intrinsic.png);"></div>
 	</header>
+
 
 	<article>
 		<div class="full--horizontal" style="background-image: url(/assets/intrinsic.png);"></div>
 	</article>
 
 	<article>
-			
 		<div class="oneleft--vertical center">
 			<div class="v-centered">
 				<h2>Idé & inspiration</h2>
@@ -107,17 +116,19 @@
 			<div class="roundup center">
 			<div class="v-centered"> 
 				<h3>Kvalitets vurdering</h3>
-				<p>Jeg synes at designet fungerer rigtig godt. Jeg har skabt et „Intrinsic“ univers, som præsenterer produktet flot & taler til en ny og yngre målgruppe. Parallax-effekten med den roterende sneaker performer super og giver en lækker oplevelse ned gennem siden
+				<p class="text-center">Jeg synes at designet fungerer rigtig godt. Jeg har skabt et „Intrinsic“ univers, som præsenterer produktet flot & taler til en ny og yngre målgruppe. Parallax-effekten med den roterende sneaker performer super og giver en lækker oplevelse ned gennem siden
 				</p>
 
 
 				<h2>Kundens reaktion</h2>
 
-				<p>ECCO var meget begejstrede for stilen og signede af på konceptet med kun meget få kommentarer.  Designet lever videre – med nye farvepaletter og billeder  – når den nye „Intrinsic“ sneaker kommer i SS16 sæsonen
+				<p class="text-center">ECCO var meget begejstrede for stilen og signede af på konceptet med kun meget få kommentarer.  Designet lever videre – med nye farvepaletter og billeder  – når den nye „Intrinsic“ sneaker kommer i SS16 sæsonen
 				</p>
 			</div>
 			</div>
 	</article>
 
-	<footer></footer>
+	<footer>
+		<button ng-click="vm.toTop()">scroll to top</button>
+	</footer>
 </section>

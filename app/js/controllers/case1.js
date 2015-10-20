@@ -14,7 +14,13 @@
 
 			// vm is the object available to the view
 			angular.extend(vm,{
-				
+				toTop: function(){
+			        $(".main").animate({ scrollTop: 0 }, "slow");
+			        return false;
+				},
+				close: function(){
+					$scope.$parent.vm.close = false;
+				}
 			});
 
 	    }

@@ -16,6 +16,10 @@
 			angular.extend(vm,{
 				states: ['case1', 'case2', 'case3', 'case4'],
 				state: 0,
+				close: false,
+				scollTop: function(){
+					window.scrollTo(0, 0);
+				},
 				next: function(){
 					var statesLen = vm.states.length - 1;
 					if(statesLen < vm.state + 1) {
@@ -36,6 +40,10 @@
 					//console.log(vm.states[vm.state]);
 					$state.go(vm.states[vm.state]);
 				}
+			});
+
+			$scope.$watch('close', function(n){
+				console.log("n: ", n);
 			});
 			
 			$scope.$watch(function(){

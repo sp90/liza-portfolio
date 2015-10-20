@@ -12,7 +12,8 @@
             'app.controller.case4',
             'app.controller.nav'
         ])
-        .config(['$locationProvider','$stateProvider','$urlRouterProvider', Config]);
+        .config(['$locationProvider','$stateProvider','$urlRouterProvider', Config])
+        .run(['$rootScope', '$state', Run]);
 
     function Config($locationProvider, $stateProvider, $urlRouterProvider) {
          
@@ -26,31 +27,39 @@
                 controllerAs: 'vm'
             })
             .state('case1', {
-                url: "/case1", 
+                url: "/grafisk-design", 
                 templateUrl: "partials/case1.html", 
                 controller: 'Case1Controller',
                 controllerAs: 'vm'
             })
             .state('case2', {
-                url: "/case2", 
+                url: "/grafisk-workflow", 
                 templateUrl: "partials/case2.html", 
-                controller: 'Case2Controller',
+                controller: 'Case1Controller',
                 controllerAs: 'vm'
             })
             .state('case3', {
-                url: "/case3", 
+                url: "/grafik-og-billedbehandling", 
                 templateUrl: "partials/case3.html", 
-                controller: 'Case2Controller',
+                controller: 'Case1Controller',
                 controllerAs: 'vm'
             })
             .state('case4', {
-                url: "/case4", 
+                url: "/typografi-og-ombrydning", 
                 templateUrl: "partials/case4.html", 
-                controller: 'Case2Controller',
+                controller: 'Case1Controller',
                 controllerAs: 'vm'
             }); 
 
         $urlRouterProvider 
             .otherwise("/");
     }
+    function Run($rootScope, $state) {
+        $rootScope.$on('$stateChangeStart', function(evt, to, params) {
+            if (to.name == 'index') {
+                evt.preventDefault();
+                $state.go('case1');
+            }
+        });
+    };
 })(); 

@@ -14,7 +14,9 @@
 
 			// vm is the object available to the view
 			angular.extend(vm,{
-				
+				close: function(){
+					$scope.$parent.vm.close = false;
+				}
 			});
 
 	    }
