@@ -6,9 +6,9 @@
 	    .module('app.controller.nav',[])
 	    .controller('NavController', NavController);
 
-	    NavController.$inject = ['$scope'];
+	    NavController.$inject = ['$scope', '$state'];
 
-	    function NavController($scope) {
+	    function NavController($scope, $state) {
 
 			var vm = this;
 
@@ -18,23 +18,33 @@
 				state: 0,
 				next: function(){
 					var statesLen = vm.states.length - 1;
-					console.log(vm.state);
 					if(statesLen < vm.state + 1) {
 						vm.state = 0;
 					} else {
 						vm.state = vm.state + 1;
 					}
+					//console.log(vm.states[vm.state]);
+					$state.go(vm.states[vm.state]);
 				},
 				prev: function(){
 					var statesLen = vm.states.length - 1;
-					console.log(vm.state);
 					if(0 > vm.state - 1) {
 						vm.state = statesLen;
 					} else {
 						vm.state = vm.state - 1;
 					}
+					//console.log(vm.states[vm.state]);
+					$state.go(vm.states[vm.state]);
 				}
 			});
+			
+			$scope.$watch(function(){
+				return $state.current;
+			}, function(n) {
+				angular.extend(vm,{
+					state: vm.states.indexOf(n.name)
+				});
+			}, true);
 
 	    }
 

@@ -11,37 +11,26 @@
 	</head>
 	<body>
 		<nav ng-controller="NavController as vm" ng-class="{'closed': vm.close}">
+			<button type="button" class="button--prev" ng-click="vm.prev()"><span>prev</span></button>
+			<button type="button" class="button--next" ng-click="vm.next()"><span>next</span></button>
 			<div class="controls">
-				<div class="case">
-					<button ng-click="vm.close = true">X</button>
-					<ul>
-						<li><button type="button" ui-sref="case1">case1</button></li>
-						<li><button type="button" ui-sref="case2">case2</button></li>
-						<li><button type="button" ui-sref="case3">case3</button></li>
-						<li><button type="button" ui-sref="case4">case4</button></li>
-					</ul>
-				</div>
-			</div>
-			<!-- <div class="controls">
-				<button type="button" ng-click="vm.next()">next</button>
-				<button type="button" ng-click="vm.prev()">prev</button>
 				<div class="case" ng-if="vm.state == 0">
 					<h1>case1</h1>
-					<button type="button" ui-sref="case1">case1</button>
+					<button type="button"  ng-click="vm.close = true">case1</button>
 				</div>
 				<div class="case" ng-if="vm.state == 1">
 					<h1>case2</h1>
-					<button type="button" ui-sref="case2">case2</button>
+					<button type="button"  ng-click="vm.close = true">case2</button>
 				</div>
 				<div class="case" ng-if="vm.state == 2">
 					<h1>case3</h1>
-					<button type="button" ui-sref="case3">case3</button>
+					<button type="button"  ng-click="vm.close = true">case3</button>
 				</div>
 				<div class="case" ng-if="vm.state == 3">
 					<h1>case4</h1>
-					<button type="button" ui-sref="case4">case4</button>
+					<button type="button"  ng-click="vm.close = true">case4</button>
 				</div>
-			</div> -->
+			</div>
 		</nav>
 		<div class="animate-wrap">
 			<div class="main fade" ui-view></div>

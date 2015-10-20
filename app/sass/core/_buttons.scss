@@ -1,0 +1,32 @@
+button {
+  &:focus {
+    outline: none;
+  }
+  &.button--prev,
+  &.button--next {
+    height: 200px;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(white, .8);
+    transition: all 400ms ease-out;
+    span {
+    	transform: rotate(-90deg) translate3d(0,0,0);
+    	display: block;
+    	line-height: 10px;
+    }
+    &:hover {
+    	height: 220px;
+    }
+  }
+  &.button--next {
+    right: 0;
+    left: auto;
+    span {
+    	transform: rotate(90deg) translate3d(0,0,0);
+    }
+  }
+}

@@ -91,27 +91,31 @@ nav {
   z-index: 0;
 }
 .fade {
-  $speed: 300ms;
+  $speed--enter: 1200ms;
+  $speed--leave: ($speed--enter / 2.5);
+  $cubic: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  
   top: 0;
   left: 0;
   &.ng-enter {
-    transition: all $speed ease;
+    transition: all $speed--enter $cubic;
     opacity: 0;
-    transform: scale(0.8);
+    transform: translateY(100%);
     position: absolute;
     &.ng-enter-active {
       opacity: 1;
-      transform: scale(1);
+      transform: translateY(0%);
+      transition-delay: $speed--leave;
     }
   }
   &.ng-leave {
-    transition: all $speed ease;
+    transition: all $speed--leave ease;
     opacity: 1;
-    transform: translateY(0%);
+    //transform: translateY(0%);
     position: absolute;
     &.ng-leave-active {
       opacity: 0;
-      transform: translateY(100%);
+      //transform: translateY(100%);
     }
   }
 }
